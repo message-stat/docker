@@ -14,6 +14,8 @@ git clone https://github.com/message-stat/docker.git
 docker compose up
 ```
 
+Открыть в браузере `http://localhost:5005` (рекомендуется Google Chrome)
+
 ### Остановить
 
 ```
