@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<yandex>
+  <listen_host>0.0.0.0</listen_host>
+
+  <lemmatizers>
+    <lemmatizer>
+      <lang>ru</lang>
+      <path>etc/clickhouse-server/NLP/lemmagen3/ru.bin</path>
+    </lemmatizer>
+    <lemmatizer>
+      <lang>en</lang>
+      <path>etc/clickhouse-server/NLP/lemmagen3/en.bin</path>
+    </lemmatizer>
+  </lemmatizers>
+</yandex>

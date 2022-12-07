@@ -1,0 +1,35 @@
+# docker compose up
+
+version: '3'
+
+services:
+  back:
+    container_name: vk-stat-back
+    image: ghcr.io/message-stat/front:latest
+    depends_on:
+      - db
+    ports:
+      - '17000:17000'
+  front:
+    container_name: vk-stat-front
+    image: ghcr.io/message-stat/back:latest
+    ports:
+      - '5005:16000'
+    depends_on:
+      - back
+  db:
+    container_name: vk-stat-db
+    image: clickhouse/clickhouse-server:22.2
+    volumes:
+      - ./data:/var/lib/clickhouse
+      - ./clickhouse/config.d:/etc/clickhouse-server/config.d
+      - ./clickhouse/users.d:/etc/clickhouse-server/users.d
+      - ./clickhouse/NLP:/etc/clickhouse-server/NLP
+      - ./clickhouse/init:/docker-entrypoint-initdb.d
+    ports:
+      - '8123:8123'
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 262144
+        hard: 262144
