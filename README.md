@@ -1,5 +1,8 @@
 # Дистрибутив VKStat
 
+Найти можно тут: [vkstat.soprachev.com](https://vkstat.soprachev.com/analytics)
+
+
 ## Запуск
 
 ### Скачать
